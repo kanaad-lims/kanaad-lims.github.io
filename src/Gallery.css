@@ -1,0 +1,50 @@
+#gallery{
+
+    padding:100px;
+
+}
+
+.gallery-header{
+
+    /* margin-bottom:40px; */
+    color:#21918b;
+
+    font-size:3rem;
+
+    font-weight:700;
+    
+    font-family: 'JetBrains Mono', monospace;
+
+}
+
+.gallery-header h2{
+
+    color:#21918b;
+
+    font-size:3rem;
+
+    font-weight:700;
+    
+    font-family: 'JetBrains Mono', monospace;
+
+}
+
+.gallery-header p{
+
+    margin-top:30px;
+
+    color:#90e016;
+
+    font-family:'JetBrains Mono', monospace;
+
+    font-size:1.1rem;
+
+}
+
+.gallery-wrapper{
+
+    height:700px;
+
+    position:relative;
+
+}

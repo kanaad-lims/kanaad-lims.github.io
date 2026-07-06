@@ -1,0 +1,154 @@
+#experience {
+  padding: 100px;
+}
+
+.experience-header {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.experience-intro {
+  margin-top: 40px;
+  max-width: 700px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.1rem;
+}
+
+.experience-card {
+  margin-top: 50px;
+
+  max-width: 900px;
+
+  background: rgba(3, 0, 15, 0.03);
+
+  border: 1px solid rgba(100, 255, 218, 0.2);
+
+  border-radius: 20px;
+
+  padding: 30px;
+
+  backdrop-filter: blur(10px);
+}
+
+.experience-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.experience-top h2 {
+  color: white;
+
+  font-family: 'JetBrains Mono', monospace;
+
+  font-size: 1.8rem;
+
+  margin: 0;
+}
+
+.experience-top span {
+  color: #64FFDA;
+
+  font-family: 'JetBrains Mono', monospace;
+}
+
+.experience-card h3 {
+  color: #64FFDA;
+
+  font-family: 'JetBrains Mono', monospace;
+
+  margin-bottom: 20px;
+}
+
+.experience-card ul {
+  color: #b0b7c3;
+
+  font-family: 'JetBrains Mono', monospace;
+
+  line-height: 1.8;
+
+  font-size: 1.05rem;
+
+  margin-bottom: 15px;
+}
+
+.highlight {
+  color: #64FFDA;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(100, 255, 218, 0.3);
+}
+
+.experience-list {
+  margin-top: 25px;
+  padding-left: 25px;
+}
+
+.experience-list li {
+  color: #b0b7c3;
+  font-family: 'JetBrains Mono', monospace;
+  line-height: 1.8;
+  margin-bottom: 18px;
+  font-size: 1.05rem;
+}
+
+.glare-card {
+  margin-top: 30px;
+
+  max-width: 800px;
+
+  background: 'transparent';
+
+
+  border-radius: 20px;
+
+  padding: 10px 20px 20px 20px;
+
+  backdrop-filter: blur(10px);
+
+  text-align: left;
+}
+
+.glare-card h3 {
+  color: #64FFDA;
+
+  font-family: 'JetBrains Mono', monospace;
+
+  margin-bottom: 20px;
+}
+
+.glare-card ul {
+  color: #b0b7c3;
+
+  font-family: 'JetBrains Mono', monospace;
+
+  line-height: 1.8;
+
+  font-size: 1.05rem;
+
+  margin-bottom: 15px;
+}
+
+.experience-hover {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.section-title-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.section-line {
+    flex: 1;
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        rgba(100, 255, 218, 0.45),
+        rgba(100, 255, 218, 0.05)
+    );
+}
