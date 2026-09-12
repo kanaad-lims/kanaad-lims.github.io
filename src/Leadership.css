@@ -1,5 +1,8 @@
 #leadership {
   padding: 100px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .leadership-header {
@@ -95,6 +98,8 @@
     justify-self: center;
 
     width: 60%;
+    max-width: 100%;
+    box-sizing: border-box;
 
 }
 

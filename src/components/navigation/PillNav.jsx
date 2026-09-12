@@ -205,15 +205,43 @@ const PillNav = ({
     onMobileMenuClick?.();
   };
 
+  const isHashLink = href => href?.startsWith('#');
+
   const isExternalLink = href =>
     href.startsWith('http://') ||
     href.startsWith('https://') ||
     href.startsWith('//') ||
     href.startsWith('mailto:') ||
     href.startsWith('tel:') ||
-    href.startsWith('#');
+    isHashLink(href);
 
   const isRouterLink = href => href && !isExternalLink(href);
+
+  const scrollToSection = href => {
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const behavior = prefersReducedMotion ? 'auto' : 'smooth';
+
+    if (href === '#' || href === '#homepage') {
+      window.scrollTo({ top: 0, behavior });
+      return;
+    }
+
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior, block: 'start' });
+    }
+  };
+
+  const handleAnchorClick = (event, href) => {
+    if (!isHashLink(href)) return;
+
+    event.preventDefault();
+    scrollToSection(href);
+
+    if (isMobileMenuOpen) {
+      toggleMobileMenu();
+    }
+  };
 
   const cssVars = {
     ['--base']: baseColor,
@@ -244,6 +272,7 @@ const PillNav = ({
             href={items?.[0]?.href || '#'}
             aria-label="Home"
             onMouseEnter={handleLogoEnter}
+            onClick={event => handleAnchorClick(event, items?.[0]?.href || '#')}
             ref={el => {
               logoRef.current = el;
             }}
@@ -287,6 +316,7 @@ const PillNav = ({
                     aria-label={item.ariaLabel || item.label}
                     onMouseEnter={() => handleEnter(i)}
                     onMouseLeave={() => handleLeave(i)}
+                    onClick={event => handleAnchorClick(event, item.href)}
                   >
                     <span
                       className="hover-circle"
@@ -335,7 +365,7 @@ const PillNav = ({
                 <a
                   href={item.href}
                   className={`mobile-menu-link${activeHref === item.href ? ' is-active' : ''}`}
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={event => handleAnchorClick(event, item.href)}
                 >
                   {item.label}
                 </a>

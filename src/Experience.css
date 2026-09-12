@@ -1,5 +1,8 @@
 #experience {
   padding: 100px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .experience-header {
@@ -97,7 +100,9 @@
 .glare-card {
   margin-top: 30px;
 
+  width: 100%;
   max-width: 800px;
+  box-sizing: border-box;
 
   background: 'transparent';
 
@@ -151,4 +156,16 @@
         rgba(100, 255, 218, 0.45),
         rgba(100, 255, 218, 0.05)
     );
+}
+
+@media (max-width: 768px) {
+  .experience-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .experience-top h2 {
+    font-size: 1.4rem;
+  }
 }

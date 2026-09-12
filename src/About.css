@@ -1,5 +1,8 @@
 #about {
   padding: 100px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .about-header {
@@ -8,8 +11,19 @@
   margin-left: 10px;
 }
 
-.about-intro {
+.about-body {
+  display: grid;
+  grid-template-columns: minmax(0, 700px) minmax(0, 1fr);
+  grid-template-areas:
+    "intro image"
+    "tech tech";
+  column-gap: 60px;
   margin-top: 40px;
+  align-items: start;
+}
+
+.about-intro {
+  grid-area: intro;
   max-width: 700px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 1.1rem;
@@ -24,13 +38,14 @@
 }
 
 .about-image {
-  position: absolute;
-  right: 50px;
-  top: 1000px;
+  grid-area: image;
+  justify-self: end;
+  align-self: start;
 }
 
 .about-image img {
   width: 450px;
+  max-width: 100%;
   height: auto;
   border-radius: 10px;
   object-fit: cover;
@@ -38,6 +53,7 @@
 
 .about-photo {
   width: 350px;
+  max-width: 100%;
   height: 450px;
   border-radius: 20px;
   overflow: hidden;
@@ -46,6 +62,34 @@
 .about-pixel-photo {
   width: 350px !important;
   height: 400px !important;
+  max-width: 100%;
+}
+
+.tech-stack-section {
+  grid-area: tech;
+  grid-column: 1 / -1;
+  margin-top: 120px;
+  width: 100%;
+}
+
+.tech-stack-title {
+  color: #64FFDA;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 2rem;
+  margin-top: -40px;
+  margin-bottom: 30px;
+}
+
+.tech-stack-loop {
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.tech-stack-loop .logoloop {
+  width: 100%;
 }
 
 .tech-stack {
@@ -73,18 +117,6 @@
   margin-bottom: 10px;
 }
 
-.tech-stack-section {
-  margin-top: 120px;
-}
-
-.tech-stack-title {
-  color: #64FFDA;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 2rem;
-  margin-top: -40px;
-  margin-bottom: 30px;
-}
-
 .section-title-row {
     display: flex;
     align-items: center;
@@ -100,4 +132,34 @@
         rgba(100, 255, 218, 0.45),
         rgba(100, 255, 218, 0.05)
     );
+}
+
+@media (max-width: 1024px) {
+  .about-body {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "intro"
+      "image"
+      "tech";
+  }
+
+  .about-image {
+    justify-self: center;
+  }
+
+  .tech-stack-section {
+    margin-top: 60px;
+  }
+
+  .about-pixel-photo {
+    width: min(350px, 100%) !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-pixel-photo {
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 350 / 400;
+  }
 }

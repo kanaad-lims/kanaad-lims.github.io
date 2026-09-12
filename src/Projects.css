@@ -1,5 +1,8 @@
 #projects {
   padding: 100px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .projects-header {
@@ -27,7 +30,9 @@
 /* Individual Project Cards */
 
 .project-card {
-  width: 800px;
+  width: 100%;
+  max-width: 800px;
+  box-sizing: border-box;
 
   background: rgba(255, 255, 255, 0.03);
 
@@ -226,4 +231,16 @@
         rgba(100, 255, 218, 0.45),
         rgba(100, 255, 218, 0.05)
     );
+}
+
+@media (max-width: 768px) {
+  .project-footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .project-card h2 {
+    font-size: 1.5rem;
+  }
 }

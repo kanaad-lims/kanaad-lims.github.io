@@ -77,6 +77,7 @@ function About() {
       <div className="section-line"></div>
 
       </div>
+    <div className="about-body">
     <div className="about-intro">
         <div
             style={{
@@ -154,14 +155,7 @@ function About() {
     Tech Stack
   </h2>
 
-  <div
-    style={{
-      height: "120px",
-      position: "relative",
-      overflow: "hidden",
-      marginTop: "20px"
-    }}
-  >
+  <div className="tech-stack-loop">
     <LogoLoop
       logos={techLogos}
       speed={40}
@@ -176,8 +170,7 @@ function About() {
     />
   </div>
     </div>
-
-    
+    </div>
 
     </section>
   );
