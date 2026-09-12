@@ -188,7 +188,7 @@ class Title {
     const textHeight = this.plane.scale.y * 0.15;
     const textWidth = textHeight * aspect;
     this.mesh.scale.set(textWidth, textHeight, 1);
-    this.mesh.position.y = -this.plane.scale.y * 0.5 - textHeight * 0.5 - 0.05;
+    this.mesh.position.y = -this.plane.scale.y * 0.5 - textHeight * 0.1 - 0.03;
     this.mesh.setParent(this.plane);
   }
 }
@@ -370,7 +370,7 @@ class Media {
         this.plane.program.uniforms.uViewportSizes.value = [this.viewport.width, this.viewport.height];
       }
     }
-    this.scale = this.screen.height / 1500;
+    this.scale = this.screen.height / 1150;
     this.plane.scale.y = (this.viewport.height * (900 * this.scale)) / this.screen.height;
     this.plane.scale.x = (this.viewport.width * (700 * this.scale)) / this.screen.width;
     this.plane.program.uniforms.uPlaneSizes.value = [this.plane.scale.x, this.plane.scale.y];

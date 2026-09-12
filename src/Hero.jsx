@@ -21,7 +21,7 @@ function Hero() {
     { name: "X", url: "https://x.com/kanaad_limaye" },
     { name: "Email", url: "mailto:kanaad.limaye@gmail.com" },
     { name: "Medium", url: "https://medium.com/@kanaad.limaye" },
-    { name: "Resume", url: "https://drive.google.com/file/d/1OAnH06tuTYWey0NTbiU5SgQkvHeqch2U/view?usp=sharing"},
+    { name: "Resume", url: "https://drive.google.com/file/d/1OqlQWzckAdK4XZpJ0M2Ied85ll6ET6sJ/view?usp=sharing"},
   ];
   return (
     <section id="homepage">
