@@ -2,7 +2,7 @@ import "./Gallery.css";
 import CircularGallery from "./components/photoanim/CircularGallery";
 import ShinyText from "./components/text/ShinyText";
 
-import ieeeaward from "./assets/gallery/ieeeaward.jpg";
+import ieeeaward from "./assets/gallery/ieeeaward.JPG";
 import awardindi from "./assets/gallery/awardindi.jpeg";
 import deccanteam from "./assets/gallery/deccanteam.jpeg";
 import hpairconf from "./assets/gallery/hpair_confirmation.png";
