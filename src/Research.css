@@ -1,5 +1,8 @@
 #research {
   padding: 100px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
 .research-header {
@@ -46,6 +49,9 @@
 }
 
 .research-card {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 
     background: rgba(255,255,255,0.03);
 
@@ -183,4 +189,15 @@
 .accepted-text{
     color: yellow;
     font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .research-links {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .research-title {
+    font-size: 1.3rem;
+  }
 }
