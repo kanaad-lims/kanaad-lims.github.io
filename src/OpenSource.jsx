@@ -54,8 +54,8 @@ function OpenSource() {
         async function loadActivity() {
             try {
                 const [prRes, issueRes, eventsRes] = await Promise.all([
-                    fetch(`https://api.github.com/search/issues?q=author:${GITHUB_USERNAME}+type:pr&sort=updated&order=desc&per_page=20`),
-                    fetch(`https://api.github.com/search/issues?q=author:${GITHUB_USERNAME}+type:issue&sort=updated&order=desc&per_page=20`),
+                    fetch(`https://api.github.com/search/issues?q=author:${GITHUB_USERNAME}+type:pr&sort=updated&order=desc&per_page=50`),
+                    fetch(`https://api.github.com/search/issues?q=author:${GITHUB_USERNAME}+type:issue&sort=updated&order=desc&per_page=50`),
                     fetch(`https://api.github.com/users/${GITHUB_USERNAME}/events/public?per_page=30`),
                 ]);
 
@@ -91,8 +91,6 @@ function OpenSource() {
                     (a, b) => new Date(b.updatedAt) - new Date(a.updatedAt)
                 );
 
-                const parsedRaisedItems = combinedRaisedItems.slice(0, 6);
-
                 const pushEvents = eventsData
                     .filter((event) => event.type === "PushEvent" && event.payload?.head)
                     .slice(0, 5);
@@ -125,7 +123,7 @@ function OpenSource() {
                 )];
 
                 if (!cancelled) {
-                    setRaisedItems(parsedRaisedItems);
+                    setRaisedItems(combinedRaisedItems.slice(0, 10));
                     setCommits(parsedCommits);
                     setOrgOwners(owners);
                     setStatus("ready");
@@ -206,7 +204,7 @@ function OpenSource() {
                                     <GoGitPullRequest className="gh-column-icon" />
                                     PRs and Issues Raised
                                 </h3>
-                                <ul className="gh-list">
+                                <ul className="gh-list gh-list-scroll">
                                     {raisedItems.length === 0 && <li className="gh-empty">No recent PRs or issues found.</li>}
                                     {raisedItems.map((raised) => (
                                         <li key={`${raised.kind}-${raised.id}`} className="gh-item">

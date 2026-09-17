@@ -153,6 +153,19 @@
   gap: 18px;
 }
 
+.gh-list-scroll {
+  max-height: 420px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 6px;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.gh-list-scroll::-webkit-scrollbar {
+  display: none;
+}
+
 .gh-empty {
   color: #6e7681;
   font-family: 'JetBrains Mono', monospace;
