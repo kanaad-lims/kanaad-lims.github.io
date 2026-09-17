@@ -1,0 +1,123 @@
+.preloader {
+  position: fixed;
+  inset: 0;
+  z-index: 10000000;
+  background: rgb(3, 0, 15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(0);
+  transition: transform 0.7s cubic-bezier(0.65, 0, 0.35, 1);
+  will-change: transform;
+}
+
+.preloader-exit {
+  transform: translateY(-100%);
+  pointer-events: none;
+}
+
+.preloader-panel {
+  width: 100%;
+  max-width: 520px;
+  padding: 0 32px;
+  box-sizing: border-box;
+}
+
+.preloader-terminal {
+  border-left: 2px solid rgba(100, 255, 218, 0.35);
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.preloader-line {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  opacity: 0;
+  transform: translateY(6px);
+  animation: preloader-line-in 380ms ease-out both;
+  white-space: nowrap;
+}
+
+.preloader-line-cmd {
+  color: #64ffda;
+}
+
+.preloader-line-ok {
+  color: #8b949e;
+}
+
+.preloader-line-ready {
+  color: #eafffb;
+  font-weight: 700;
+  text-shadow: 0 0 18px rgba(100, 255, 218, 0.45);
+}
+
+.preloader-cursor {
+  display: inline-block;
+  width: 9px;
+  height: 16px;
+  margin-left: 8px;
+  background: #64ffda;
+  vertical-align: -3px;
+  opacity: 0;
+  animation: preloader-line-in 300ms ease-out both, preloader-cursor-blink 1s step-end infinite;
+}
+
+.preloader-cursor-solid {
+  animation: preloader-line-in 300ms ease-out both;
+  opacity: 1;
+}
+
+@keyframes preloader-line-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes preloader-cursor-blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+  50.01%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .preloader-panel {
+    padding: 0 20px;
+  }
+
+  .preloader-line {
+    font-size: 0.75rem;
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .preloader {
+    transition: opacity 0.4s ease;
+  }
+
+  .preloader-exit {
+    transform: none;
+    opacity: 0;
+  }
+
+  .preloader-line,
+  .preloader-cursor {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
