@@ -41,6 +41,7 @@ body::-webkit-scrollbar {
 
 @media (max-width: 1024px) {
   #about,
+  #opensource,
   #experience,
   #projects,
   #research,
@@ -53,6 +54,7 @@ body::-webkit-scrollbar {
 
 @media (max-width: 768px) {
   #about,
+  #opensource,
   #experience,
   #projects,
   #research,
@@ -64,6 +66,7 @@ body::-webkit-scrollbar {
 
 @media (max-width: 480px) {
   #about,
+  #opensource,
   #experience,
   #projects,
   #research,

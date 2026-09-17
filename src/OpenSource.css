@@ -1,0 +1,288 @@
+#opensource {
+  padding: 100px;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.opensource-header {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-left: 10px;
+}
+
+.section-title-row {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.section-line {
+  flex: 1;
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    rgba(100, 255, 218, 0.45),
+    rgba(100, 255, 218, 0.05)
+  );
+}
+
+/* Mac window */
+
+.mac-window {
+  margin-top: 50px;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.mac-window-titlebar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 18px;
+  background: #161b22;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mac-window-dots {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.mac-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.mac-dot-red {
+  background: #ff5f56;
+}
+
+.mac-dot-yellow {
+  background: #ffbd2e;
+}
+
+.mac-dot-green {
+  background: #27c93f;
+}
+
+.mac-window-address {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  padding: 6px 16px;
+  color: #b0b7c3;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.mac-window-link {
+  color: #64ffda;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  text-decoration: none;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.mac-window-link:hover {
+  text-decoration: underline;
+}
+
+.mac-window-body {
+  padding: 36px;
+  min-height: 220px;
+}
+
+.gh-status {
+  color: #b0b7c3;
+  font-family: 'JetBrains Mono', monospace;
+  text-align: center;
+  padding: 50px 0;
+}
+
+.gh-status-error a {
+  color: #64ffda;
+  margin-left: 4px;
+}
+
+.gh-columns {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 48px;
+}
+
+.gh-column {
+  min-width: 0;
+}
+
+.gh-column-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: white;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.15rem;
+  margin: 0 0 18px;
+}
+
+.gh-column-icon {
+  color: #8b949e;
+}
+
+.gh-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.gh-empty {
+  color: #6e7681;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+}
+
+.gh-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+.gh-icon {
+  flex-shrink: 0;
+  font-size: 1.1rem;
+  margin-top: 2px;
+  display: flex;
+}
+
+.gh-pr-open {
+  color: #3fb950;
+}
+
+.gh-pr-merged {
+  color: #a371f7;
+}
+
+.gh-pr-closed {
+  color: #f85149;
+}
+
+.gh-commit {
+  color: #8b949e;
+}
+
+.gh-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.gh-item-title {
+  color: #e6edf3;
+  text-decoration: none;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gh-item-title:hover {
+  color: #64ffda;
+  text-decoration: underline;
+}
+
+.gh-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6e7681;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.78rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.gh-orgs {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.gh-orgs-title {
+  color: #8b949e;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 14px;
+}
+
+.gh-org-avatars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.gh-org-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: block;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.gh-org-avatar:hover {
+  transform: translateY(-3px);
+  border-color: #64ffda;
+}
+
+.gh-org-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 900px) {
+  .gh-columns {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .mac-window-address {
+    display: none;
+  }
+
+  .mac-window-body {
+    padding: 24px;
+  }
+
+  .opensource-header {
+    font-size: 2.2rem;
+  }
+}

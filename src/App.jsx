@@ -2,6 +2,7 @@
 import "./App.css";
 import Hero from "./Hero";
 import About from "./About";
+import OpenSource from "./OpenSource";
 import Experience from "./Experience";
 import Projects from "./Projects";
 import Research from "./Research";
@@ -16,6 +17,7 @@ function App() {
       <main className="page-content">
         <Hero />
         <About />
+        <OpenSource />
         <Experience />
         <Projects />
         <Research />

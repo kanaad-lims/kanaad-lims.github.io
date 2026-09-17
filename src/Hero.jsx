@@ -1,6 +1,8 @@
 import "./Hero.css";
 import { useEffect, useState } from "react";
+import { FiArrowUpRight } from "react-icons/fi";
 import BorderGlow from "./components/buttons/BorderGlow";
+import GlareHover from "./components/buttons/GlareHover";
 import PillNav from "./components/navigation/PillNav";
 import logo from "./assets/logo.png";
 import Shuffle from "./components/text/Shuffle";
@@ -21,13 +23,19 @@ function Hero() {
     { name: "X", url: "https://x.com/kanaad_limaye" },
     { name: "Email", url: "mailto:kanaad.limaye@gmail.com" },
     { name: "Medium", url: "https://medium.com/@kanaad.limaye" },
-    { name: "Resume", url: "https://drive.google.com/file/d/1OqlQWzckAdK4XZpJ0M2Ied85ll6ET6sJ/view?usp=sharing"},
   ];
+
+  const resumeLink = {
+    name: "Resume",
+    url: "https://drive.google.com/file/d/1OqlQWzckAdK4XZpJ0M2Ied85ll6ET6sJ/view?usp=sharing",
+  };
   return (
     <section id="homepage">
       <div className="hero-aurora" aria-hidden="true">
         <Aurora />
       </div>
+
+      <div className="hero-nav-bar" aria-hidden="true"></div>
 
       <PillNav
         logo={logo}
@@ -36,6 +44,7 @@ function Hero() {
           { label: "Home", href: "#" },
           { label: "About", href: "#about" },
           //{ label: "Resume", href: "https://drive.google.com/file/d/1OAnH06tuTYWey0NTbiU5SgQkvHeqch2U/view?usp=sharing" },
+          { label: "OSS", href: "#opensource" },
           { label: "Experience", href: "#experience" },
           { label: "Projects", href: "#projects" },
           { label: "Research", href: "#research" },
@@ -106,6 +115,30 @@ function Hero() {
                 </BorderGlow>
               </a>
             ))}
+
+            <a
+              href={resumeLink.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hero-resume-link"
+            >
+              <GlareHover
+                background="linear-gradient(135deg, #64FFDA 0%, #38BDF8 100%)"
+                borderColor="transparent"
+                glareColor="#ffffff"
+                glareOpacity={0.35}
+                glareAngle={-45}
+                glareSize={200}
+                transitionDuration={650}
+                playOnce={false}
+                className="hero-resume-glare"
+              >
+                <div className="hero-resume-button">
+                  <span>Resume</span>
+                  <FiArrowUpRight className="hero-resume-icon" />
+                </div>
+              </GlareHover>
+            </a>
           </div>
         </div>
       </div>
